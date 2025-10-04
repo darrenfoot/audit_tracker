@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audit Progress Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="branding">
+      <div class="logo-circle">AT</div>
+      <div>
+        <h1>Audit Tracker</h1>
+        <p>Monitor audit progress across the portfolio at a glance.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="board" aria-label="Audit progress board">
+      <div class="board-columns">
+        <div class="board-column board-column--clients">
+          <div class="board-column__header">Client</div>
+          <div class="board-column__body" id="client-list"></div>
+        </div>
+        <div class="board-column" data-stage="fieldwork">
+          <div class="board-column__header">Fieldwork</div>
+          <div class="board-column__body" id="fieldwork-column"></div>
+        </div>
+        <div class="board-column" data-stage="managerReview">
+          <div class="board-column__header">Manager Review</div>
+          <div class="board-column__body" id="manager-column"></div>
+        </div>
+        <div class="board-column" data-stage="partnerReview">
+          <div class="board-column__header">Partner Review</div>
+          <div class="board-column__body" id="partner-column"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <template id="status-cell-template">
+    <div class="status-cell">
+      <select class="status-select" aria-label="Select audit status">
+        <option value="notStarted">Not started</option>
+        <option value="inProgress">In progress</option>
+        <option value="complete">Complete</option>
+        <option value="waiting">Waiting on client</option>
+      </select>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
